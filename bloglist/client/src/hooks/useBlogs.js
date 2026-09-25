@@ -3,12 +3,24 @@ import blogService from '../services/blogs'
 import useBlogsStore, { useBlogsStoreActions } from '../store/blogs'
 import { useNotificationActions } from '../store/notification'
 
+// useBlogs() is called from several components at once (App, Blog,
+// BlogComments), each mounting its own effect. Without this guard, each
+// one fires its own GET /api/blogs on mount, and whichever of those
+// requests resolves LAST overwrites the store - including clobbering a
+// comment/like/etc that was added in between. This flag is module-level
+// (not React state) so it is checked and set synchronously, before any
+// `await`, guaranteeing only the first mount actually fetches.
+let blogsFetchStarted = false
+
 export const useBlogs = () => {
   const { blogs } = useBlogsStore()
   const { setBlogs } = useBlogsStoreActions()
   const { setNotification } = useNotificationActions()
 
   useEffect(() => {
+    if (blogsFetchStarted) return
+    blogsFetchStarted = true
+
     const fetchBlogs = async () => {
       try {
         const blogs = await blogService.getAll()

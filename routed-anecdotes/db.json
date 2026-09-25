@@ -34,6 +34,13 @@
       "info": "123proband",
       "votes": 0,
       "id": "upgUY5-qOYs"
+    },
+    {
+      "content": "an anecdote created by playwright 1790366711123",
+      "author": "Playwright",
+      "info": "https://playwright.dev",
+      "votes": 0,
+      "id": "qNOyVSWv3UU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
