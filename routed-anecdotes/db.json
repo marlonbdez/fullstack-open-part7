@@ -1,0 +1,40 @@
+{
+  "anecdotes": [
+    {
+      "content": "asdasd",
+      "author": "asdas",
+      "info": "dasd",
+      "votes": 0,
+      "id": "ze2thnM1p20"
+    },
+    {
+      "content": "loreeem",
+      "author": "ipsimm",
+      "info": "asdasd",
+      "votes": 0,
+      "id": "kywQm4GEhmI"
+    },
+    {
+      "content": "marlon",
+      "author": "prueba",
+      "info": "qwe123",
+      "votes": 0,
+      "id": "0LNZyuAORb0"
+    },
+    {
+      "content": "hola",
+      "author": "hola",
+      "info": "hola",
+      "votes": 0,
+      "id": "chQUZigJfXY"
+    },
+    {
+      "content": "123probando",
+      "author": "123probando",
+      "info": "123proband",
+      "votes": 0,
+      "id": "upgUY5-qOYs"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
